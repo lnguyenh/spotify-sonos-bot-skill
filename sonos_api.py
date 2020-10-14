@@ -18,14 +18,14 @@ def volume(speaker, volume):
 
 
 def search_and_play_album(speaker, album_name):
-    url = API_URL + speaker + '/' + '/musicsearch/spotify/album/' + \
+    url = API_URL + speaker + '/musicsearch/spotify/album/' + \
           slugify(album_name)
     LOG.info(url)
     requests.get(url)
 
 
 def search_and_play_playlist(speaker, playlist_name):
-    url = API_URL + speaker + '/' + '/musicsearch/spotify/playlist/' + \
+    url = API_URL + speaker + '/musicsearch/spotify/playlist/' + \
           slugify(playlist_name)
     LOG.info(url)
     requests.get(url)
