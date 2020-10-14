@@ -1,5 +1,5 @@
 # <img src="https://raw.githack.com/FortAwesome/Font-Awesome/master/svgs/solid/anchor.svg" card_color="#40DBB0" width="50" height="50" style="vertical-align:bottom"/> Spotify Sonos Bot
-Mycroft is an open source project that allows a local and controlled alternative to Google Assistant and Alexa. This Mycroft skill focuses on allowing music playback from Spotify on Sonos speakers
+Mycroft is an open source project that provides a local and controlled alternative to Google Assistant and Alexa. This Mycroft skill focuses on allowing music playback from Spotify on Sonos speakers. It has been tested on Raspberry Pi.
 
 **It is still very WIP** 
 
@@ -8,6 +8,11 @@ Mycroft is an open source project that allows a local and controlled alternative
 * "Stop the music"
 * "Play the playlist P"
 * "Play the album A"
+
+## Installation on Raspberry Pi
+- Install Picroft https://mycroft-ai.gitbook.io/docs/using-mycroft-ai/get-mycroft/picroft
+- Install the Node Sonos HTTP API server https://github.com/jishi/node-sonos-http-api/
+- Run `mycroft-msm install https://github.com/lnguyenh/spotify-sonos-bot-skill`
 
 
 ## TODOs
