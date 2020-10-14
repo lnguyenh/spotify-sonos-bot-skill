@@ -6,10 +6,6 @@ from .sonos_api import (
 
 
 class SpotifySonosBot(MycroftSkill):
-    def __init__(self):
-        MycroftSkill.__init__(self)
-        self.default_speaker = None
-
     def initialize(self):
         self.settings_change_callback = self.on_settings_changed
         self.on_settings_changed()
