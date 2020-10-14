@@ -16,6 +16,7 @@ class SpotifySonosBot(MycroftSkill):
 
     def on_settings_changed(self):
         self.default_speaker = self.settings.get('default_speaker')
+        self.log.info('Default speaker set to {}'.format(self.default_speaker))
 
     def stop(self):
         stop(self.default_speaker)
