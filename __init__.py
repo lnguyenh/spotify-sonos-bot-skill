@@ -24,7 +24,7 @@ class SpotifySonosBot(MycroftSkill):
         play(self.default_speaker)
 
     @intent_file_handler('stop_the_music.intent')
-    def play(self, message):
+    def stop_(self, message):
         stop(self.default_speaker)
 
     @intent_file_handler('play_album.intent')
