@@ -17,5 +17,5 @@ def volume(speaker, volume):
 
 
 def search_and_play_album(speaker, album_name):
-    requests.get(API_URL + speaker + '/' + '/musicsearch/spotify/' +
+    requests.get(API_URL + speaker + '/' + '/musicsearch/spotify/album/' +
                  album_name)
