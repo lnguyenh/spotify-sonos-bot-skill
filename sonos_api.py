@@ -14,3 +14,8 @@ def stop(speaker):
 
 def volume(speaker, volume):
     requests.get(API_URL + speaker + '/' + 'volume/' + volume)
+
+
+def search_and_play_album(speaker, album_name):
+    requests.get(API_URL + speaker + '/' + '/musicsearch/spotify/' +
+                 album_name)
