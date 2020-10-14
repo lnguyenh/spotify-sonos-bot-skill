@@ -2,6 +2,7 @@ import requests
 from slugify import slugify
 from mycroft.util import LOG
 
+
 API_URL="http://localhost:5005/"
 
 

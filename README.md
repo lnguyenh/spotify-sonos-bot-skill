@@ -1,27 +1,34 @@
 # <img src="https://raw.githack.com/FortAwesome/Font-Awesome/master/svgs/solid/anchor.svg" card_color="#40DBB0" width="50" height="50" style="vertical-align:bottom"/> Spotify Sonos Bot
-Allows playing music from spotify on sonos speakers
+Mycroft skill focused on playing music from Spotify on Sonos speakers
 
 ## About
+**Still very WIP** 
 
+Requires a working instance of https://github.com/jishi/node-sonos-http-api/ running on the same host than Mycroft.
 
 ## Examples
 * "Play some music"
-* "Play the playlist x on z"
+* "Stop the music"
+* "Play the playlist P"
+* "Play the album A"
+
+
+TODO
 * "Next song"
 * "Previous song"
-* "Sonos volume up"
-* "Stop the music"
-* "Play the album x from y"
-* "Play some music by z"
+* "Play some music by Z"
 * "What is this song?"
+* "... on speaker S"
+* "Sonos volume up/down"
 
 ## Credits
-sinopsy
+The very nice project https://github.com/jishi/node-sonos-http-api/
+
 
 ## Category
 **Music & Audio**
 
 ## Tags
-#Spotify
-#Sonos
+**Spotify**
 
+**Sonos**
