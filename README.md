@@ -4,7 +4,7 @@ Mycroft skill focused on playing music from Spotify on Sonos speakers
 ## About
 **Still very WIP** 
 
-Requires a working instance of https://github.com/jishi/node-sonos-http-api/ running on the same host than Mycroft.
+Requires a running instance of https://github.com/jishi/node-sonos-http-api/ running on the same host than Mycroft.
 
 ## Examples
 * "Play some music"
@@ -22,7 +22,7 @@ TODO
 * "Sonos volume up/down"
 
 ## Credits
-The very nice project https://github.com/jishi/node-sonos-http-api/
+The very nice project https://github.com/jishi/node-sonos-http-api/ on which this skill is based on.
 
 
 ## Category
