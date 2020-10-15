@@ -15,9 +15,9 @@ Kudos to the people involved in the project Node Sonos HTTP API (https://github.
 * "Play the album Parachute"
 
 ## Installation On Raspberry Pi
-- Install Picroft on a Raspberry Pi (version 3 or higher) https://mycroft-ai.gitbook.io/docs/using-mycroft-ai/get-mycroft/picroft
-- Install the Node Sonos HTTP API server on the Pi https://github.com/jishi/node-sonos-http-api/
-- Run `mycroft-msm install https://github.com/lnguyenh/spotify-sonos-bot-skill` on the Pi
+- Install Picroft on a Raspberry Pi (version 3 or higher) https://mycroft-ai.gitbook.io/docs/using-mycroft-ai/get-mycroft/picroft.
+- Install the Node Sonos HTTP API server on the Raspberry Pi https://github.com/jishi/node-sonos-http-api/ and ideally make it run as a service with auto restart.
+- Run `mycroft-msm install https://github.com/lnguyenh/spotify-sonos-bot-skill` on the Pi.
 
 
 ## Todos
