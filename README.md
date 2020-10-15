@@ -13,6 +13,11 @@ Kudos to the people involved in the project Node Sonos HTTP API (https://github.
 * "Stop the music"
 * "Play the playlist Morning Acoustic"
 * "Play the album Parachute"
+* "Sonos volume up"
+* "Decrease the volume on Sonos"
+* "Set the Sonos volume to 10"
+* "Next song"
+* "Previous song"
 
 ## Installation On Raspberry Pi
 - Install Picroft on a Raspberry Pi (version 3 or higher) https://mycroft-ai.gitbook.io/docs/using-mycroft-ai/get-mycroft/picroft.
@@ -22,12 +27,11 @@ Kudos to the people involved in the project Node Sonos HTTP API (https://github.
 
 ## Todos
 ### Commands
-* "Next song"
-* "Previous song"
+
 * "Play some music by Coldplay"
 * "What is this song?"
 * "... on Living Room"
-* "Sonos volume up"
+
 ### Misc
 * Make configuration less hardcoded
 * Document and improve the setup

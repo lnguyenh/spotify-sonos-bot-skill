@@ -1,2 +1,4 @@
 set the spotify volume to {wanted_volume}
 set the sonos volume to {wanted_volume}
+set the volume to {wanted_volume} on sonos
+set the volume to {wanted_volume} on spotify
