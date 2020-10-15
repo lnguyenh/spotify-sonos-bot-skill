@@ -56,7 +56,7 @@ class SpotifySonosBot(MycroftSkill):
         wanted_volume = extract_number(wanted_volume)
         self.log.info('{} {}'.format(message.data, wanted_volume))
         if wanted_volume:
-            set_volume(self.default_speaker, wanted_volume)
+            set_volume(self.default_speaker, str(wanted_volume))
 
 
 def create_skill():
