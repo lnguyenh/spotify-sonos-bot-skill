@@ -4,7 +4,7 @@ from .sonos_api import (
     stop,
     search_and_play_album,
     search_and_play_playlist,
-)
+    increase_volume, decrease_volume, set_volume)
 
 
 class SpotifySonosBot(MycroftSkill):
@@ -33,8 +33,6 @@ class SpotifySonosBot(MycroftSkill):
         self.log.info(message.data)
         if album_name:
             search_and_play_album(self.default_speaker, album_name)
-        else:
-            self.speak('Please try again with an album name')
 
     @intent_file_handler('play_playlist.intent')
     def play_playlist(self, message):
@@ -42,9 +40,20 @@ class SpotifySonosBot(MycroftSkill):
         self.log.info(message.data)
         if playlist_name:
             search_and_play_playlist(self.default_speaker, playlist_name)
-        else:
-            self.speak('Please try again with a playlist name')
 
+    @intent_file_handler('increase_volume.intent')
+    def increase_volume(self, message):
+        increase_volume(self.default_speaker)
+
+    @intent_file_handler('decrease_volume.intent')
+    def derease_volume(self, message):
+        decrease_volume(self.default_speaker)
+
+    @intent_file_handler('set_volume.intent')
+    def set_volume(self, message):
+        wanted_volume = message.data.get('wanted_volume')
+        if wanted_volume:
+            set_volume(self.default_speaker, wanted_volume)
 
 
 def create_skill():
