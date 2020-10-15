@@ -1,4 +1,5 @@
 from mycroft import MycroftSkill, intent_file_handler
+from mycroft.util.parse import extract_number
 from .sonos_api import (
     play,
     stop,
@@ -51,7 +52,9 @@ class SpotifySonosBot(MycroftSkill):
 
     @intent_file_handler('set_volume.intent')
     def set_volume(self, message):
-        wanted_volume = message.data.get('wanted_volume')
+        wanted_volume = message.data.get('wanted_volume', '')
+        wanted_volume = extract_number(wanted_volume)
+        self.log.info('{} {}'.format(message.data, wanted_volume))
         if wanted_volume:
             set_volume(self.default_speaker, wanted_volume)
 
