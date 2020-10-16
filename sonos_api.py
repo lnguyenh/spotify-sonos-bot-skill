@@ -55,5 +55,5 @@ def search_and_play_playlist(speaker, playlist_name):
 
 
 def search_and_play_artist(speaker, artist_name):
-    return get(API_URL + speaker + '/musicsearch/spotify/artist/' +
+    return get(API_URL + speaker + '/musicsearch/spotify/station/' +
                slugify(artist_name))
