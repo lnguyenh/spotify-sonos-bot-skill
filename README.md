@@ -31,10 +31,15 @@ Kudos to the people involved in the project Node Sonos HTTP API (https://github.
 * "Play some music by Coldplay"
 * "What is this song?"
 * "... on Living Room"
+* "Skip 5 songs"
+* Play the song Last Christmas"
+* "What is the current Sonos volume?"
 
-### Misc
+### Other
+* Support for Spotify user playlists
 * Make configuration less hardcoded
-* Document and improve the setup
+* Document and sreamline the setup
+* tests :)
 
 ## Credits
 * Mycroft, the open source local voice assistant (https://mycroft.ai/)
