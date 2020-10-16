@@ -52,3 +52,8 @@ def search_and_play_album(speaker, album_name):
 def search_and_play_playlist(speaker, playlist_name):
     return get(API_URL + speaker + '/musicsearch/spotify/playlist/' +
                slugify(playlist_name))
+
+
+def search_and_play_artist(speaker, artist_name):
+    return get(API_URL + speaker + '/musicsearch/spotify/artist/' +
+               slugify(artist_name))

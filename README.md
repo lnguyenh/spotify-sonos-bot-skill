@@ -32,7 +32,7 @@ Kudos to the people involved in the project Node Sonos HTTP API (https://github.
 * "What is this song?"
 * "... on Living Room"
 * "Skip 5 songs"
-* Play the song Last Christmas"
+* #Play the song Last Christmas"
 * "What is the current Sonos volume?"
 
 ### Other
