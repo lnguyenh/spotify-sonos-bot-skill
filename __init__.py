@@ -53,14 +53,15 @@ class SpotifySonosBot(MycroftSkill):
                 self.speak('There is no playlist called {}'.format(
                     playlist_name))
 
-    @intent_file_handler('play_artist.intent')
-    def play_artist(self, message):
+    @intent_file_handler('radio_artist.intent')
+    def radio_artist(self, message):
         artist_name = message.data.get('artist_name')
         self.log.info(message.data)
         if artist_name:
             found = search_and_play_artist(self.speaker, artist_name)
             if not found:
-                self.speak('There is no artist called {}'.format(artist_name))
+                self.speak('There is no radio for artist called {}'.format(
+                    artist_name))
 
     @intent_file_handler('increase_volume.intent')
     def increase_volume(self, message):

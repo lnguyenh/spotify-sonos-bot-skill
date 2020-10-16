@@ -18,6 +18,7 @@ Kudos to the people involved in the project Node Sonos HTTP API (https://github.
 * "Set the Sonos volume to 10"
 * "Next song"
 * "Previous song"
+* "Play the radio for Coldplay"
 
 ## Installation On Raspberry Pi
 - Install Picroft on a Raspberry Pi (version 3 or higher) https://mycroft-ai.gitbook.io/docs/using-mycroft-ai/get-mycroft/picroft.
