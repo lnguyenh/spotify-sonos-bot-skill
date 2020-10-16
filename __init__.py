@@ -9,7 +9,7 @@ from .sonos_api import (
     decrease_volume,
     set_volume,
     next_song,
-)
+    previous)
 
 
 class SpotifySonosBot(MycroftSkill):
@@ -73,7 +73,7 @@ class SpotifySonosBot(MycroftSkill):
 
     @intent_file_handler('previous_song.intent')
     def previous_song(self, message):
-        self.previous_song(self.speaker)
+        previous(self.speaker)
 
 
 def create_skill():
