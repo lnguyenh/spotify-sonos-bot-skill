@@ -18,6 +18,7 @@ Kudos to the people involved in the project Node Sonos HTTP API (https://github.
 * "Set the Sonos volume to 10"
 * "Next song"
 * "Previous song"
+* "Play some music by Coldplay"
 * "Play the radio for Coldplay"
 
 ## Installation On Raspberry Pi
@@ -29,7 +30,6 @@ Kudos to the people involved in the project Node Sonos HTTP API (https://github.
 ## Todos
 ### Commands
 
-* "Play some music by Coldplay"
 * "What is this song?"
 * "... on Living Room"
 * "Skip 5 songs"
