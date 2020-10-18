@@ -14,8 +14,6 @@ skillMetadata:
         - name: spotify_client_id
             type: text
             label: Spotify client ID for api calls
-            value: ""
         - name: spotify_client_secret
             type: text
             label: Spotify client secret for api calls
-            value: ""
