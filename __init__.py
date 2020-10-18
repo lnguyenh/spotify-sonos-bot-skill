@@ -105,8 +105,8 @@ class SpotifySonosBot(MycroftSkill):
                 self.speak('There is no radio for artist called {}'.format(
                     artist_name))
 
-    @intent_file_handler('refresh_spotify.intent')
-    def refresh_spotify(self, message):
+    @intent_file_handler('refresh_spotify_playlists.intent')
+    def refresh_spotify_playlists(self, message):
         self.refresh_spotify()
 
     @intent_file_handler('increase_volume.intent')
