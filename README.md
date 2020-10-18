@@ -32,9 +32,9 @@ Kudos to the people involved in the project Node Sonos HTTP API (https://github.
 - Run `mycroft-msm install https://github.com/lnguyenh/spotify-sonos-bot-skill` on the Pi.
 - Go in your skills settings https://account.mycroft.ai/skills and add
     - your Sonos default speaker
-    - your Spotify username (only needed to playing non-popular public playlist)
-    - your Spotify dev client ID (only needed to playing non-popular public playlist)
-    - your Spotify dev client secret (only needed to playing non-popular public playlist)
+    - your Spotify username (optional but allows prioritizing your own playlists when searching)
+    - your Spotify dev client ID (optional but allows prioritizing your own playlists when searching)
+    - your Spotify dev client secret (optional but allows prioritizing your own playlists when searching)
 
 ## Todos
 ### Commands
