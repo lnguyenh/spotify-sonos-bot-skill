@@ -2,4 +2,3 @@ play the playlist {playlist_name}
 play the spotify playlist {playlist_name}
 play playlist {playlist_name}
 play the playlist {playlist_name} on sonos
-sonos playlist {playlist_name}

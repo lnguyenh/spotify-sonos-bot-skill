@@ -77,7 +77,7 @@ class SpotifySonosBot(MycroftSkill):
             if playlist_name.lower() in self.playlists:
                 self.log.info('Found playlist for user %s' %
                               self.spotify_username)
-                play_playlist(self.playlists['playlist_name'])
+                play_playlist(self.playlists['uri'])
             else:
                 found = search_and_play_playlist(self.speaker, playlist_name)
                 if not found:
