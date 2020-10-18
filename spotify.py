@@ -12,7 +12,7 @@ class SpotifyClient(object):
 
     def fetch_user_playlists(self, username):
         playlists = {}
-        raw_playlists = self.spotipy_client.user_playlists(username, limit=200)
+        raw_playlists = self.spotipy_client.user_playlists(username, limit=100)
         if raw_playlists and raw_playlists.get('items'):
             playlists = {
                 playlist['name'].lower(): playlist['uri']
