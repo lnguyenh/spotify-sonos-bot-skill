@@ -1,7 +1,7 @@
 from mycroft import MycroftSkill, intent_file_handler
 from mycroft.util.parse import extract_number
 
-from spotify import SpotifyClient
+from .spotify import SpotifyClient
 from .sonos_api import (
     play,
     stop,
