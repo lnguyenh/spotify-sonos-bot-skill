@@ -1,5 +1,7 @@
 from mycroft import MycroftSkill, intent_file_handler
 from mycroft.util.parse import extract_number
+
+from spotify import SpotifyClient
 from .sonos_api import (
     play,
     stop,
@@ -22,6 +24,29 @@ class SpotifySonosBot(MycroftSkill):
     def on_settings_changed(self):
         self.speaker = self.settings.get('default_speaker')
         self.log.info('Default speaker set to {}'.format(self.speaker))
+        self.spotify_username = self.settings.get('spotify_username')
+        self.spotify_client_id = self.settings.get('spotify_client_id')
+        self.spotify_client_secret = self.settings.get('spotify_client_secret')
+        self.refresh_spotify()
+
+    @property
+    def spotify_ready(self):
+        return  (self.spotify_username and self.spotify_client_secret and
+                 self.spotify_client_id)
+
+    def refresh_spotify(self):
+        self.playlists = {}
+        self.client = None
+        if self.spotify_ready:
+            try:
+                self.client = SpotifyClient(self.spotify_client_id,
+                                            self.spotify_client_secret)
+                self.playlists = self.client.fetch_user_playlists(
+                    self.spotify_username)
+                self.log.info(self.playlists)
+            except Exception as e:
+                self.log.warning('Could not fetch Spotify playlists for user '
+                                 '%s: %s' % (self.spotify_username, e))
 
     def stop(self):
         stop(self.speaker)
