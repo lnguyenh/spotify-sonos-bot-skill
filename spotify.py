@@ -3,6 +3,9 @@ import spotipy
 from spotipy.oauth2 import SpotifyClientCredentials
 
 
+CHUNK_SIZE = 50
+
+
 class SpotifyClient(object):
     def __init__(self, client_id, client_secret):
         os.environ['SPOTIPY_CLIENT_ID'] = client_id
@@ -11,11 +14,25 @@ class SpotifyClient(object):
         self.spotipy_client = spotipy.Spotify(auth_manager=auth_manager)
 
     def fetch_user_playlists(self, username):
-        playlists = {}
-        raw_playlists = self.spotipy_client.user_playlists(username)
-        if raw_playlists and raw_playlists.get('items'):
-            playlists = {
+        offset = 0
+
+        results = self.spotipy_client.user_playlists(
+            username, limit=CHUNK_SIZE, offset=offset)
+        next_ = results['next']
+        playlists = {
+            playlist['name'].lower(): playlist['uri']
+            for playlist in results['items']
+        }
+
+        while next_:
+            results = self.spotipy_client.user_playlists(
+                username, limit=CHUNK_SIZE, offset=offset)
+            next_ = results['next']
+            playlists_chunk = {
                 playlist['name'].lower(): playlist['uri']
-                for playlist in raw_playlists['items']
+                for playlist in results['items']
             }
+            playlists.update(playlists_chunk)
+            offset = offset + CHUNK_SIZE
+
         return playlists
