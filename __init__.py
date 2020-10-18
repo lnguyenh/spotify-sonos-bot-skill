@@ -85,7 +85,7 @@ class SpotifySonosBot(MycroftSkill):
                         playlist_name))
 
     @intent_file_handler('play_artist.intent')
-    def play_playlist(self, message):
+    def play_artist(self, message):
         artist_name = message.data.get('artist_name')
         self.log.info(message.data)
         if artist_name:
