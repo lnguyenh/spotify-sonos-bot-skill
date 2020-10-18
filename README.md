@@ -20,12 +20,17 @@ Kudos to the people involved in the project Node Sonos HTTP API (https://github.
 * "Previous song"
 * "Play some music by Coldplay"
 * "Play the radio for Coldplay"
+* "Play the playlist Cool Stuff" (First looks at the user's own playlist, and fallbacks on Spotify's public playlists)
 
 ## Installation On Raspberry Pi
 - Install Picroft on a Raspberry Pi (version 3 or higher) https://mycroft-ai.gitbook.io/docs/using-mycroft-ai/get-mycroft/picroft.
 - Install the Node Sonos HTTP API server on the Raspberry Pi https://github.com/jishi/node-sonos-http-api/ and ideally make it run as a service with auto restart.
 - Run `mycroft-msm install https://github.com/lnguyenh/spotify-sonos-bot-skill` on the Pi.
-
+- Go in your skills settings https://account.mycroft.ai/skills and add
+    - your Sonos default speaker
+    - your Spotify username (only needed to playing non-popular public playlist)
+    - your Spotify dev client ID (only needed to playing non-popular public playlist)
+    - your Spotify dev client secret (only needed to playing non-popular public playlist)
 
 ## Todos
 ### Commands
@@ -33,13 +38,13 @@ Kudos to the people involved in the project Node Sonos HTTP API (https://github.
 * "What is this song?"
 * "... on Living Room"
 * "Skip 5 songs"
-* #Play the song Last Christmas"
+* Play the song Last Christmas"
 * "What is the current Sonos volume?"
 
 ### Other
-* Support for Spotify user playlists
+* Support for multiple Sonos speakers
 * Make configuration less hardcoded
-* Document and sreamline the setup
+* Document and streamline the setup
 * tests :)
 
 ## Credits
