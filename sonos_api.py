@@ -46,14 +46,20 @@ def decrease_volume(speaker):
 
 def search_and_play_album(speaker, album_name):
     return get(API_URL + speaker + '/musicsearch/spotify/album/' +
-               slugify(album_name))
+               slugify(album_name, separator='+'))
 
 
 def search_and_play_playlist(speaker, playlist_name):
     return get(API_URL + speaker + '/musicsearch/spotify/playlist/' +
-               slugify(playlist_name))
+               slugify(playlist_name, separator='+'))
 
 
 def search_and_play_artist(speaker, artist_name):
     return get(API_URL + speaker + '/musicsearch/spotify/station/' +
-               slugify(artist_name))
+               slugify(artist_name, separator='+'))
+
+
+def play_playlist(speaker, playlist_uri):
+    # uri should look like spotify:playlist:5Sxw4p4AImvYJE36xe8UCr
+    return get(API_URL + speaker + '/spotify/now/spotify:user:' +
+               playlist_uri)

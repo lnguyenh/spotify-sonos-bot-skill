@@ -13,7 +13,7 @@ from .sonos_api import (
     next_song,
     previous,
     search_and_play_artist,
-)
+    play_playlist)
 
 
 class SpotifySonosBot(MycroftSkill):
@@ -43,7 +43,8 @@ class SpotifySonosBot(MycroftSkill):
                                             self.spotify_client_secret)
                 self.playlists = self.client.fetch_user_playlists(
                     self.spotify_username)
-                self.log.info(self.playlists)
+                self.log.info('Found %s playlists for user %s' % (
+                    len(self.playlists), self.spotify_username))
             except Exception as e:
                 self.log.warning('Could not fetch Spotify playlists for user '
                                  '%s: %s' % (self.spotify_username, e))
@@ -73,10 +74,15 @@ class SpotifySonosBot(MycroftSkill):
         playlist_name = message.data.get('playlist_name')
         self.log.info(message.data)
         if playlist_name:
-            found = search_and_play_playlist(self.speaker, playlist_name)
-            if not found:
-                self.speak('There is no playlist called {}'.format(
-                    playlist_name))
+            if playlist_name.lower() in self.playlists:
+                self.log.info('Found playlist for user %s' %
+                              self.spotify_username)
+                play_playlist(self.playlists['playlist_name'])
+            else:
+                found = search_and_play_playlist(self.speaker, playlist_name)
+                if not found:
+                    self.speak('There is no playlist called {}'.format(
+                        playlist_name))
 
     @intent_file_handler('play_artist.intent')
     def play_playlist(self, message):
