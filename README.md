@@ -2,11 +2,11 @@
 ## About
 Mycroft (https://mycroft.ai/) is an open source project that provides a local and controlled alternative to Google Assistant and Alexa. Mycroft can run on a Raspberry Pi. Similarly to Alexa, you can add functionalities to your Mycroft voice assistant setup by installing "skills".
 
-This project is a skill for Mycroft that provides convenient voice commands to play Spotify music on Sonos speakers.
+This project is a **skill** for Mycroft that provides convenient voice commands to play Spotify music on Sonos speakers.
 
 Kudos to the people involved in the project Node Sonos HTTP API (https://github.com/jishi/node-sonos-http-api/) which does most of the work and exposes an easy to use Sonos API.
 
-**It is still very much WIP** but already allows in its current state the necessary commands for controlling Sonos and Spotify while cooking dinner.
+**It is still very much WIP** but already allows in its current state the necessary commands for controlling Sonos and Spotify while cooking dinner. It currently only supports playing music on one Sonos speaker but using the node http api, it should be fairly easy to add support for several speakers.
 
 ## Supported Commands
 * "Play some music"
