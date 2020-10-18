@@ -22,6 +22,10 @@ Kudos to the people involved in the project Node Sonos HTTP API (https://github.
 * "Play the radio for Coldplay"
 * "Play the playlist Cool Stuff" (First looks at the user's own playlist, and fallbacks on Spotify's public playlists)
 
+## Pre-requisites
+* Get spotify developement credentials here: https://developer.spotify.com/. At the time of writing, anyone can get some.
+* Be comfortable running command line commands. For example, you need to be able to install and run a node.js app for example.
+
 ## Installation On Raspberry Pi
 - Install Picroft on a Raspberry Pi (version 3 or higher) https://mycroft-ai.gitbook.io/docs/using-mycroft-ai/get-mycroft/picroft.
 - Install the Node Sonos HTTP API server on the Raspberry Pi https://github.com/jishi/node-sonos-http-api/ and ideally make it run as a service with auto restart.
