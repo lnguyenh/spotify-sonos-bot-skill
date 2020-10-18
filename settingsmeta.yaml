@@ -8,12 +8,14 @@ skillMetadata:
           label: the default speaker to use
           value: "Kitchen"
         - name: spotify_username
-            type: text
-            label: Your spotify username if you have an account
-            value: "spotify"
+          type: text
+          label: Your spotify username if you have an account
+          value: "spotify"
         - name: spotify_client_id
-            type: text
-            label: Spotify client ID for api calls
+          type: text
+          label: Spotify client ID for api calls
+          value: ""
         - name: spotify_client_secret
-            type: text
-            label: Spotify client secret for api calls
+          type: text
+          label: Spotify client secret for api calls
+          value: ""
