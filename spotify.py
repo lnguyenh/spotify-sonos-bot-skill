@@ -36,3 +36,18 @@ class SpotifyClient(object):
             offset = offset + CHUNK_SIZE
 
         return playlists
+
+    def get_top_tracks(self, artist_name):
+        artists = self.spotipy_client.search(
+            q='artist:' + artist_name, type='artist')['artists']['items']
+
+        if not artists:
+            return []
+
+        artist_id = artists['artists']['items'][0]['id']
+        tracks = self.spotipy_client.artist_top_tracks(artist_id)['tracks']
+
+        if not tracks:
+            return []
+        else:
+            return [track['id'] for track in tracks]

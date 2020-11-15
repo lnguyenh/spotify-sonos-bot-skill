@@ -24,7 +24,7 @@ Kudos to the people involved in the project Node Sonos HTTP API (https://github.
 
 ## Pre-requisites
 * Get spotify developement credentials here: https://developer.spotify.com/. At the time of writing, anyone can get some.
-* Be comfortable running command line commands. For example, you need to be able to install and run a node.js app for example.
+* Be comfortable using the command line. For example, you need to be able to install and run a node.js app.
 
 ## Installation On Raspberry Pi
 - Install Picroft on a Raspberry Pi (version 3 or higher) https://mycroft-ai.gitbook.io/docs/using-mycroft-ai/get-mycroft/picroft.

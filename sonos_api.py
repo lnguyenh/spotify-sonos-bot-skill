@@ -49,6 +49,10 @@ def search_and_play_album(speaker, album_name):
                slugify(album_name, separator='+'))
 
 
+def search_and_play_song(speaker, song_name):
+    return get(API_URL + speaker + '/musicsearch/spotify/song/' +
+               slugify(song_name, separator='+'))
+
 def search_and_play_playlist(speaker, playlist_name):
     return get(API_URL + speaker + '/musicsearch/spotify/playlist/' +
                slugify(playlist_name, separator='+'))
@@ -63,3 +67,7 @@ def play_playlist(speaker, playlist_uri):
     # uri should look like spotify:playlist:5Sxw4p4AImvYJE36xe8UCr
     return get(API_URL + speaker + '/spotify/now/spotify:user:' +
                playlist_uri)
+
+
+def queue_song(speaker, song_uri):
+    return get(API_URL + speaker + '/spotify/queue/' + song_uri)

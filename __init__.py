@@ -13,7 +13,7 @@ from .sonos_api import (
     next_song,
     previous,
     search_and_play_artist,
-    play_playlist)
+    play_playlist, queue_song, search_and_play_song)
 
 
 class SpotifySonosBot(MycroftSkill):
@@ -69,6 +69,15 @@ class SpotifySonosBot(MycroftSkill):
             if not found:
                 self.speak('There is no album called {}'.format(album_name))
 
+    @intent_file_handler('play_song.intent')
+    def play_song(self, message):
+        song_name = message.data.get('song_name')
+        self.log.info(message.data)
+        if song_name:
+            found = search_and_play_song(self.speaker, song_name)
+            if not found:
+                self.speak('There is no album called {}'.format(song_name))
+
     @intent_file_handler('play_playlist.intent')
     def play_playlist(self, message):
         playlist_name = message.data.get('playlist_name')
@@ -89,11 +98,9 @@ class SpotifySonosBot(MycroftSkill):
         artist_name = message.data.get('artist_name')
         self.log.info(message.data)
         if artist_name:
-            playlist_name = 'this is {}'.format(artist_name)
-            found = search_and_play_playlist(self.speaker, playlist_name)
-            if not found:
-                self.speak('I couldn\'t find the playlist called {}'.format(
-                    playlist_name))
+            tracks = self.client.get_top_tracks(artist_name)
+            for track_uri in tracks:
+                queue_song(track_uri)
 
     @intent_file_handler('radio_artist.intent')
     def radio_artist(self, message):
