@@ -20,7 +20,7 @@ Kudos to the people involved in the project Node Sonos HTTP API (https://github.
 * "Skip 5 songs"
 * "Previous song"
 * "Play the song Karma Police"
-* "Play some music by Coldplay" (plays the most popular songs for this artist and not the curated Spotify playlist)
+* "Play some music by Coldplay" (plays the most popular songs for this artist and not the curated Spotify playlist, that is how we like it :) 
 * "Play the radio for Coldplay"
 * "Play the playlist Cool Stuff" (First looks at the user's own playlist, and fallbacks on Spotify's public playlists)
 
