@@ -5,6 +5,7 @@ Mycroft (https://mycroft.ai/) is an open source project that provides a local an
 This project is a **skill** for Mycroft that provides convenient voice commands to play Spotify music on Sonos speakers.
 
 Kudos to the people involved in the project Node Sonos HTTP API (https://github.com/jishi/node-sonos-http-api/) which does most of the work and exposes an easy to use Sonos API.
+Kudos to the project Spotipy (https://github.com/plamere/spotipy) that is used for things not available directly from the Node Sonos project. 
 
 **It is still very much WIP** but already provides in its current state the necessary commands for controlling Sonos and Spotify while cooking dinner. **It currently only supports playing music on one Sonos speaker** but using the node http api, it should be fairly easy to add support for several speakers.
 
@@ -18,7 +19,8 @@ Kudos to the people involved in the project Node Sonos HTTP API (https://github.
 * "Set the Sonos volume to 10"
 * "Next song"
 * "Previous song"
-* "Play some music by Coldplay"
+* "Play the song Karma Police"
+* "Play some music by Coldplay" (plays the most popular songs for this artist and not the curated Spotify playlist)
 * "Play the radio for Coldplay"
 * "Play the playlist Cool Stuff" (First looks at the user's own playlist, and fallbacks on Spotify's public playlists)
 
@@ -42,7 +44,6 @@ Kudos to the people involved in the project Node Sonos HTTP API (https://github.
 * "What is this song?"
 * "... on Living Room"
 * "Skip 5 songs"
-* Play the song Last Christmas"
 * "What is the current Sonos volume?"
 
 ### Other
@@ -54,6 +55,7 @@ Kudos to the people involved in the project Node Sonos HTTP API (https://github.
 ## Credits
 * Mycroft, the open source local voice assistant (https://mycroft.ai/)
 * Node Sonos HTTP API, which does all the heavy lifting related to Sonos and Spotify (https://github.com/jishi/node-sonos-http-api/)
+* Spotipy used for a few specific commands not supported by Node Sonos (https://github.com/plamere/spotipy) 
 
 ## Category
 **Music & Audio**
