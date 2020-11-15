@@ -100,7 +100,7 @@ class SpotifySonosBot(MycroftSkill):
         if artist_name:
             tracks = self.client.get_top_tracks(artist_name)
             for track_uri in tracks:
-                queue_song(track_uri)
+                queue_song(self.speaker, track_uri)
 
     @intent_file_handler('radio_artist.intent')
     def radio_artist(self, message):
