@@ -50,4 +50,4 @@ class SpotifyClient(object):
         if not tracks:
             return []
         else:
-            return [track['id'] for track in tracks]
+            return [track['uri'] for track in tracks]

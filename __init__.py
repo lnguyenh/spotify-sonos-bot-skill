@@ -99,10 +99,9 @@ class SpotifySonosBot(MycroftSkill):
         self.log.info(message.data)
         if artist_name:
             tracks = self.client.get_top_tracks(artist_name)
-            first = True
             clear_queue(self.speaker)
-            for track_uri in tracks:
-                if first:
+            for i, track_uri in enumerate(tracks):
+                if i == 0:
                     play_song(self.speaker, track_uri)
                 else:
                     queue_song(self.speaker, track_uri)
