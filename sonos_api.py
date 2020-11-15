@@ -71,3 +71,11 @@ def play_playlist(speaker, playlist_uri):
 
 def queue_song(speaker, song_uri):
     return get(API_URL + speaker + '/spotify/queue/' + song_uri)
+
+
+def play_song(speaker, song_uri):
+    return get(API_URL + speaker + '/spotify/now/' + song_uri)
+
+
+def clear_queue(speaker):
+    return get(API_URL + speaker + '/clearqueue')

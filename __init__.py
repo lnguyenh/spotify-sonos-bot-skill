@@ -13,7 +13,7 @@ from .sonos_api import (
     next_song,
     previous,
     search_and_play_artist,
-    play_playlist, queue_song, search_and_play_song)
+    play_playlist, queue_song, search_and_play_song, clear_queue, play_song)
 
 
 class SpotifySonosBot(MycroftSkill):
@@ -99,8 +99,13 @@ class SpotifySonosBot(MycroftSkill):
         self.log.info(message.data)
         if artist_name:
             tracks = self.client.get_top_tracks(artist_name)
+            first = True
+            clear_queue(self.speaker)
             for track_uri in tracks:
-                queue_song(self.speaker, track_uri)
+                if first:
+                    play_song(self.speaker, track_uri)
+                else:
+                    queue_song(self.speaker, track_uri)
 
     @intent_file_handler('radio_artist.intent')
     def radio_artist(self, message):
