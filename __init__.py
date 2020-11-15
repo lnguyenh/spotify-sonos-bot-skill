@@ -138,7 +138,10 @@ class SpotifySonosBot(MycroftSkill):
 
     @intent_file_handler('next_song.intent')
     def next_song(self, message):
-        next_song(self.speaker)
+        number_to_skip = message.data.get('number', '')
+        number_to_skip = extract_number(number_to_skip)
+        for _ in range(number_to_skip):
+            next_song(self.speaker)
 
     @intent_file_handler('previous_song.intent')
     def previous_song(self, message):

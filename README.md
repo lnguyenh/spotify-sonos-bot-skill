@@ -4,8 +4,7 @@ Mycroft (https://mycroft.ai/) is an open source project that provides a local an
 
 This project is a **skill** for Mycroft that provides convenient voice commands to play Spotify music on Sonos speakers.
 
-Kudos to the people involved in the project Node Sonos HTTP API (https://github.com/jishi/node-sonos-http-api/) which does most of the work and exposes an easy to use Sonos API.
-Kudos to the project Spotipy (https://github.com/plamere/spotipy) that is used for things not available directly from the Node Sonos project. 
+Kudos to the people involved in the project Node Sonos HTTP API (https://github.com/jishi/node-sonos-http-api/) which does most of the work and exposes an easy to use Sonos API, and to the project Spotipy (https://github.com/plamere/spotipy) that is used for things not available directly from the Node Sonos project. 
 
 **It is still very much WIP** but already provides in its current state the necessary commands for controlling Sonos and Spotify while cooking dinner. **It currently only supports playing music on one Sonos speaker** but using the node http api, it should be fairly easy to add support for several speakers.
 

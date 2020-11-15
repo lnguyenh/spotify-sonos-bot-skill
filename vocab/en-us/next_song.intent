@@ -1,8 +1,7 @@
-skip
+skip {number}
 next
 play the next song
 play next song
-skip song
+skip {number} song
+skip {number} songs
 next song
-skip this song
-
