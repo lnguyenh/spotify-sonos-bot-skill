@@ -44,7 +44,7 @@ class SpotifyClient(object):
         if not artists:
             return []
 
-        artist_id = artists['artists']['items'][0]['id']
+        artist_id = artists[0]['id']
         tracks = self.spotipy_client.artist_top_tracks(artist_id)['tracks']
 
         if not tracks:
