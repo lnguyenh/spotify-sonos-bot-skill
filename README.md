@@ -17,6 +17,7 @@ Kudos to the people involved in the project Node Sonos HTTP API (https://github.
 * "Decrease the volume on Sonos"
 * "Set the Sonos volume to 10"
 * "Next song"
+* "Skip 5 songs"
 * "Previous song"
 * "Play the song Karma Police"
 * "Play some music by Coldplay" (plays the most popular songs for this artist and not the curated Spotify playlist)
@@ -42,7 +43,6 @@ Kudos to the people involved in the project Node Sonos HTTP API (https://github.
 
 * "What is this song?"
 * "... on Living Room"
-* "Skip 5 songs"
 * "What is the current Sonos volume?"
 
 ### Other
