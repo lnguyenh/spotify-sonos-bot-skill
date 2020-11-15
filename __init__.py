@@ -48,6 +48,8 @@ class SpotifySonosBot(MycroftSkill):
             except Exception as e:
                 self.log.warning('Could not fetch Spotify playlists for user '
                                  '%s: %s' % (self.spotify_username, e))
+        else:
+            self.log.warning('Cant refresh without spotify credentials')
 
     def stop(self):
         stop(self.speaker)
@@ -97,6 +99,12 @@ class SpotifySonosBot(MycroftSkill):
     def play_artist(self, message):
         artist_name = message.data.get('artist_name')
         self.log.info(message.data)
+
+        if not self.spotify_ready:
+            self.log.warning('Cant play artist popular songs without spotify '
+                             'credentials')
+            return
+
         if artist_name:
             tracks = self.client.get_top_tracks(artist_name)
             clear_queue(self.speaker)
