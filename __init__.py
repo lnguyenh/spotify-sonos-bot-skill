@@ -25,10 +25,16 @@ class SpotifySonosBot(MycroftSkill):
     def on_settings_changed(self):
         self.speaker = self.settings.get('default_speaker')
         self.log.info('Default speaker set to {}'.format(self.speaker))
+
         self.spotify_username = self.settings.get('spotify_username')
         self.spotify_client_id = self.settings.get('spotify_client_id')
         self.spotify_client_secret = self.settings.get('spotify_client_secret')
         self.refresh_spotify()
+
+        volume = self.settings.get('default_speaker')
+        if volume:
+            self.log.info('Setting Sonos volume to {}'.format(volume))
+            set_volume(self.speaker, volume)
 
     @property
     def spotify_ready(self):

@@ -19,3 +19,7 @@ skillMetadata:
           type: text
           label: Spotify client secret for api calls
           value: ""
+        - name: startup_volume
+          type: number
+          label: optional volume that the speakers are set to when Mycroft starts
+          value: ""
