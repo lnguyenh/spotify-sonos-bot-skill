@@ -87,7 +87,7 @@ def get_state(speaker):
 
 def get_volume(speaker):
     state = get_state(speaker)
-    LOG(state)
+    LOG.info(state)
     volume = state['volume']
     return volume
 
