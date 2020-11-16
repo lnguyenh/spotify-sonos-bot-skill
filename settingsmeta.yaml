@@ -21,5 +21,5 @@ skillMetadata:
           value: ""
         - name: default_volume
           type: number
-          label: optional volume that the speakers are set to when Mycroft starts
-          value: ""
+          label: volume that the speakers are set to when Mycroft starts
+          value: "20"
