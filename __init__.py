@@ -31,7 +31,7 @@ class SpotifySonosBot(MycroftSkill):
         self.spotify_client_secret = self.settings.get('spotify_client_secret')
         self.refresh_spotify()
 
-        volume = self.settings.get('default_speaker')
+        volume = self.settings.get('default_volume')
         if volume:
             self.log.info('Setting Sonos volume to {}'.format(volume))
             set_volume(self.speaker, volume)
