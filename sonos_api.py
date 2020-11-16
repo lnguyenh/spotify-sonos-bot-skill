@@ -8,9 +8,13 @@ MAX_VOLUME = 32
 DELTA_VOLUME = 5
 
 
-def get(url):
+def _get(url):
     LOG.info(url)
-    response = requests.get(url)
+    return requests.get(url)
+
+
+def get(url):
+    response = _get(url)
     return response.ok
 
 def play(speaker):
@@ -81,19 +85,18 @@ def clear_queue(speaker):
     return get(API_URL + speaker + '/clearqueue')
 
 
-def get_state(speaker):
-    return get(API_URL + speaker + '/state')
+def _get_state(speaker):
+    return _get(API_URL + speaker + '/state')
 
 
 def get_volume(speaker):
-    state = get_state(speaker).json()
-    LOG.info(state)
+    state = _get_state(speaker).json()
     volume = state['volume']
     return volume
 
 
 def get_current_track(speaker):
-    state = get_state(speaker).json()
+    state = _get_state(speaker).json()
     title = state['currentTrack']['title']
     artist = state['currentTrack']['artist']
     if title:
