@@ -87,13 +87,16 @@ def get_state(speaker):
 
 def get_volume(speaker):
     state = get_state(speaker)
-    return state['volume']
+    LOG(state)
+    volume = state['volume']
+    return volume
 
 
 def get_current_track(speaker):
     state = get_state(speaker)
-    if state['currentTrack']['title']:
-        return f"{state['currentTrack']['title']} by " \
-            f"{state['currentTrack']['artist']}"
+    title = state['currentTrack']['title']
+    artist = state['currentTrack']['artist']
+    if title:
+        return f'{title} by {artist}'
     else:
         return ''
