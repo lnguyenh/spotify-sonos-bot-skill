@@ -86,14 +86,14 @@ def get_state(speaker):
 
 
 def get_volume(speaker):
-    state = get_state(speaker)
+    state = get_state(speaker).json()
     LOG.info(state)
     volume = state['volume']
     return volume
 
 
 def get_current_track(speaker):
-    state = get_state(speaker)
+    state = get_state(speaker).json()
     title = state['currentTrack']['title']
     artist = state['currentTrack']['artist']
     if title:
