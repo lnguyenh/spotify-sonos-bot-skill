@@ -79,3 +79,21 @@ def play_song(speaker, song_uri):
 
 def clear_queue(speaker):
     return get(API_URL + speaker + '/clearqueue')
+
+
+def get_state(speaker):
+    return get(API_URL + speaker + '/state')
+
+
+def get_volume(speaker):
+    state = get_state(speaker)
+    return state['volume']
+
+
+def get_current_track(speaker):
+    state = get_state(speaker)
+    if state['currentTrack']['title']:
+        return f"{state['currentTrack']['title']} by " \
+            f"{state['currentTrack']['artist']}"
+    else:
+        return ''

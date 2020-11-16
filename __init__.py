@@ -13,7 +13,8 @@ from .sonos_api import (
     next_song,
     previous,
     search_and_play_artist,
-    play_playlist, queue_song, search_and_play_song, clear_queue, play_song)
+    play_playlist, queue_song, search_and_play_song, clear_queue, play_song,
+    get_volume, get_current_track)
 
 
 class SpotifySonosBot(MycroftSkill):
@@ -154,6 +155,19 @@ class SpotifySonosBot(MycroftSkill):
     @intent_file_handler('previous_song.intent')
     def previous_song(self, message):
         previous(self.speaker)
+
+    @intent_file_handler('get_volume.intent')
+    def get_volume(self, message):
+        self.speak('The music volume is currently {}'.format(
+            get_volume(self.speaker)))
+
+    @intent_file_handler('get_current_track.intent')
+    def get_current_track(self, message):
+        current_track = get_current_track(self.speaker)
+        if current_track:
+            self.speak('The current track is {}'.format(current_track))
+        else:
+            self.speak('Nothing is being played at the moment')
 
 
 def create_skill():
