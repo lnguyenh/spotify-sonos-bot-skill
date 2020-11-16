@@ -4,9 +4,11 @@
 
 This project is a **skill** for Mycroft that provides convenient voice commands to play Spotify music on Sonos speakers.
 
-Kudos to the people involved in the project **Node Sonos HTTP API** (https://github.com/jishi/node-sonos-http-api/) which does most of the work and exposes an easy to use Sonos API, and in the project **Spotipy** (https://github.com/plamere/spotipy) that is used for things not available directly from the Node Sonos project. 
+Big kudos to:
+- the project **Node Sonos HTTP API** (https://github.com/jishi/node-sonos-http-api/) which does most of the work and exposes an easy to use Sonos API
+- the project **Spotipy** (https://github.com/plamere/spotipy) that is used for populating the user's list of personal spotify playlists, and to play the most popular songs for a given artist.
 
-**It is still WIP** but provides in its current state the vital commands for controlling Sonos and Spotify while cooking dinner :). **It currently only supports playing music on one Sonos speaker** but using the node http api, it should be fairly easy to add support for several speakers.
+In its current state, this project provides all the commands I have needed in order to voice-control Sonos and Spotify while cooking dinner :). **It currently only supports playing music on one Sonos speaker** but using the node http api, it should be fairly easy to add support for several speakers.
 
 ## Supported Commands
 * "Play some music"
@@ -23,6 +25,9 @@ Kudos to the people involved in the project **Node Sonos HTTP API** (https://git
 * "Play some music by Coldplay" (plays the most popular songs for this artist and not the curated Spotify playlist, that is how we like it :) 
 * "Play the radio for Coldplay"
 * "Play the playlist Cool Stuff" (first looks at the user's own playlist, and fallbacks on Spotify's public playlists. **The user's playlist has to be public** )
+* "What is this song?"
+* "What is the current Sonos volume?"
+
 
 ## Pre-requisites
 * Get spotify developement credentials here: https://developer.spotify.com/. At the time of writing, anyone can get some.
@@ -39,13 +44,7 @@ Kudos to the people involved in the project **Node Sonos HTTP API** (https://git
     - your Spotify dev client secret (optional but allows prioritizing your own playlists when searching)
 
 ## Todos
-### Commands
 
-* "What is this song?"
-* "... on Living Room"
-* "What is the current Sonos volume?"
-
-### Other
 * Support for multiple Sonos speakers
 * Make configuration less hardcoded
 * Document and streamline the setup
