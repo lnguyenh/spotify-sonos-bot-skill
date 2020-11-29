@@ -1,0 +1,11 @@
+[Unit]
+Description=Node Sonos Http Api
+After=network-online.target
+
+[Service]
+Restart=on-failure
+WorkingDirectory=/home/pi/node-sonos-http-api/
+ExecStart=/usr/bin/npm start
+
+[Install]
+WantedBy=multi-user.target

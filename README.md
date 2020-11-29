@@ -39,6 +39,21 @@ In its current state, this project provides all the commands I have needed in or
 ## Installation On Raspberry Pi
 - Install Picroft on a Raspberry Pi (version 3 or higher) https://mycroft-ai.gitbook.io/docs/using-mycroft-ai/get-mycroft/picroft.
 - Install the Node Sonos HTTP API server on the Raspberry Pi https://github.com/jishi/node-sonos-http-api/ and ideally make it run as a service with auto restart.
+    - Don't forget to add your Spotify dev credentials. They live in the file called settings.json in the root folder of `node-sonos-http-api`
+    - `node-sonos-http-api` is expected to run on the Pi and be available ay `http://localhost:5005/`
+    - Some helper files are included in the folder `node-sonos-http-api-resources`
+    - Suggested installation should be something like:
+    ```
+  # -> Install node.js on the raspberry pi. Google it yourself or check https://linuxize.com/post/how-to-install-node-js-on-raspberry-pi/ for example
+  cd /home/pi
+  git clone https://github.com/jishi/node-sonos-http-api.git
+  cd node-sonos-http-api
+  touch settings.json
+  # -> Add your spotify credentials in settings.json. See example in `node-sonos-http-api-resources/settings.json`
+  # -> Place the file `node-sonos-http-api-resources/node-sonos-http-api.service` in /lib/systemd/system/`
+  sudo systemctl enable node-sonos-http-api
+  sudo systemctl start node-sonos-http-api
+  ```
 - Run `mycroft-msm install https://github.com/lnguyenh/spotify-sonos-bot-skill` on the Pi.
 - Go in your skills settings https://account.mycroft.ai/skills and add
     - your Sonos default speaker

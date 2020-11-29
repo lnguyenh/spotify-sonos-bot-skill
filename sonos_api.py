@@ -3,7 +3,7 @@ from slugify import slugify
 from mycroft.util import LOG
 
 
-API_URL="http://localhost:5005/"
+API_URL = 'http://localhost:5005/'
 MAX_VOLUME = 32
 DELTA_VOLUME = 5
 

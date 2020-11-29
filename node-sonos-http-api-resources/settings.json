@@ -1,0 +1,6 @@
+{
+  "spotify": {
+    "clientId": "your-spotify-dev-credentials-client-id",
+    "clientSecret": "your-spotify-dev-credentials-client-secret"
+   }
+}
